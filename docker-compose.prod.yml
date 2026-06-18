@@ -17,7 +17,7 @@ services:
     build: .
     restart: unless-stopped
     ports:
-      - "127.0.0.1:8080:80"   # change 8080 if that host port is already used by your FastAPI app
+      - "127.0.0.1:8090:80"   # 8080 was taken by another app; ARC uses 8090 (must match nginx proxy_pass)
     volumes:
       - .:/var/www/html
       - ./uploads:/var/www/html/uploads   # persist uploaded logos/files
