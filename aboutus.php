@@ -724,7 +724,7 @@ session_start();
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@arc.co.tz">info@arc.co.tz</a>
+                            <a href="mailto:info@shehita.co.tz">info@shehita.co.tz</a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
