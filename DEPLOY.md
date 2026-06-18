@@ -1,4 +1,4 @@
-# Deploying ARC to production (arc_system.shehita.co.tz)
+# Deploying ARC to production (arc-system.shehita.co.tz)
 
 This guide covers a one-time server setup, then automatic deploys on every
 push to `main` via GitHub Actions.
@@ -27,7 +27,7 @@ In your domain DNS panel add an **A record**:
 |------|----------|----------------------|
 | A    | `system` | `<your Contabo VPS IP>` |
 
-Wait a few minutes, then confirm: `ping arc_system.shehita.co.tz` should resolve
+Wait a few minutes, then confirm: `ping arc-system.shehita.co.tz` should resolve
 to your VPS IP.
 
 ---
@@ -81,17 +81,17 @@ docker compose -f docker-compose.prod.yml ps     # both services should be "Up"/
 ## 3. Nginx + HTTPS
 
 ```bash
-sudo cp deploy/nginx/arc_system.shehita.co.tz.conf \
-        /etc/nginx/sites-available/arc_system.shehita.co.tz
-sudo ln -s /etc/nginx/sites-available/arc_system.shehita.co.tz \
+sudo cp deploy/nginx/arc-system.shehita.co.tz.conf \
+        /etc/nginx/sites-available/arc-system.shehita.co.tz
+sudo ln -s /etc/nginx/sites-available/arc-system.shehita.co.tz \
            /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
 
 # Free TLS cert (Certbot adds the 443 block + HTTP->HTTPS redirect automatically)
-sudo certbot --nginx -d arc_system.shehita.co.tz
+sudo certbot --nginx -d arc-system.shehita.co.tz
 ```
 
-Visit **https://arc_system.shehita.co.tz** and log in with your
+Visit **https://arc-system.shehita.co.tz** and log in with your
 `ADMIN_DEFAULT_*` credentials. **Change the admin password immediately.**
 
 ---
